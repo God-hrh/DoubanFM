@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="login">
+        <div class="back">< 返回</div>
+        <form action="/authenticate" method="post">
+            <div class="main">
+                <div class="title">
+                    <div class="pswlogin"><button>密码登陆</button></div>
+                    <div class="regist"> <a href="/sign">注册</a></div>
+                </div>
+                <div>
+                    <input type="text" class="username" name="name"placeholder="请输入用户名">
+                </div>
+                <div class="psw">
+                    <input type="password" class="pas" name="password" placeholder="请输入密码">
+                    <a class="findpsw">找回密码</a>
+                </div>
+                <div>
+                    <button type="submit" class="logindouban">登陆豆瓣</button>
+                </div>
+                <div class="autologin">
+                    <input type="checkbox" class="checkbox">下次自动登陆
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+
+</html>

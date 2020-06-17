@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>注册界面</title>
+    <link rel="stylesheet" th:href="@{/css/sign.css}">
+    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+    <div class="sign">
+        <div class="back">< 返回</div>
+        <form action="/register" method="post">
+        <div class="main">
+            <div class="title">
+                <div class="login"><a href="/login">密码登陆</a></div>
+                <div class="regist">注册</div>
+            </div>
+            <div>
+               <input type="text" class="username" name="name"placeholder="请输入用户名">
+            </div>
+            <div>
+                <input type="password" class="pas" name="password" placeholder="请输入密码">
+            </div>
+            <div>
+                <input type="password" class="repas" placeholder="请输入确认密码">
+            </div>
+            <div>
+                <input type="text" class="mobile" name="mobile" placeholder="请输入手机号">
+            </div>
+            <div class="button">
+                <button type="submit">注册豆瓣</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</body>
+</html>

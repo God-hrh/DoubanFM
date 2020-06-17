@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索</title>
+    <link rel="stylesheet" th:href="@{/css/search.css}">
+    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+    <div class="search">
+        <div class="main">
+            <input type="text" placeholder="搜索你喜欢的歌曲" id="keyword" onchange="result()" value="">
+            <span>取消</span>
+        </div>
+        <div class="searchresult">
+            <div class="mainarea">
+                <div class="main" th:each="song: ${songs}">
+                    <div class="heardimg">
+                        <img th:src="${song.cover}" alt="">
+                    </div>
+                    <div class="name">[[${song.name}]]</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let img = document.querySelector("img");
+    let name = document.querySelector(".name");
+    let result = function() {
+        let keyword = document.getElementById("keyword").value;
+        console.log(keyword);
+        fetch("http://localhost:8080/"+""+"searchContent?keyword="+keyword)
+            .then(function (response) {
+                return response.json();
+            }).then(function (myJson) {
+            console.log(myJson);
+            name.innerHTML = `${myJson.name}`;
+            img.src = `${myJson.cover}`;
+        });
+    }
+</script>
+</html>

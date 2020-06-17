@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>layout</title>
+    <style>
+        a:link{
+            color: #A3A3A3;
+        }
+        .bottom{
+            width: 1440px;
+            height: 216px;
+            box-sizing: border-box;
+            background: #FBFBFB;
+            color: #A3A3A3;
+            padding: 80px 0px 25px 0px;
+            display: flex;
+            flex-direction: column;
+        }
+        div{
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        .bottom>div:nth-child(3){
+            color: #262626;
+        }
+    </style>
+    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+
+</head>
+<body >
+<div class="layout-bottom" th:fragment="bottom">
+    <div>© 2019 douban <a href="#" title="京ICP备 11027288 号">京ICP备11027288号</a> 网络视听许可证0110418号 京公网安备110105012274 新出发京批字第直150126号</div>
+    <div>违法和不良信息举报 电话：17610209667 邮箱：doubannvgroup.cn</div>
+    <div>广告合作：adfm@douban.com  FM用户手册  新版说明  我要反馈  豆瓣FM中心</div>
+</div>
+</body>
+</html>

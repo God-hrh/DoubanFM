@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/mhzdetail.css}">
+    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+    <div class="mhzdetail" th:fragment="mhzdetail">
+        <div class="share">分享</div>
+        <div class="singer">
+            <div class="heardimg"><img th:src="${subject.cover}" alt=""></div>
+            <div class="name"><span>[[${subject.name}]]</span></div>
+            <div class="button"><button>喜欢 50619</button></div>
+        </div>
+        <hr>
+        <div class="songs">
+            <div class="all">全部精选歌曲</div>
+            <div class="songlist">
+                <ol>
+                    <div th:each="song,it: ${songs}" >
+                        <div th:if="${it.count}<=5">
+<!--                                图片暂时先取消-->
+<!--                            <img th:src="${song.cover}" alt="">-->
+
+                        <li  >
+                            <span >[[${song.name}]]</span>
+                        </li>
+                        </div>
+                    </div>
+
+                </ol>
+            </div>
+            <div class="findall">
+                查看全部精选歌曲
+            </div>
+        </div>
+        <hr>
+        <div class="simartist">
+            <div class="name" >[[${subject.name}]]</div>
+            <div class="intro">该兆赫可能包含以下相似艺术家的歌曲</div>
+            <div class="mainarea">
+                <div class="main" th:each="singer,it: ${simSingers}" >
+                    <div th:if="${it.count}<=8" class="main">
+                        <div class="heardimg"><img th:src="${singer.avatar}" alt=""></div>
+                        <div class="name">[[${singer.name}]]</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

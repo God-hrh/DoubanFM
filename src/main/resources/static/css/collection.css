@@ -1,0 +1,58 @@
+.collection {
+  padding: 0px 70px 0px 130px; }
+  .collection a {
+    text-decoration: none; }
+  .collection a:link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000; }
+  .collection .top {
+    display: flex;
+    height: 17px;
+    width: 255px;
+    margin: 43px auto;
+    text-align: center; }
+    .collection .top div {
+      margin-right: 43px;
+      width: 30px;
+      height: 100%;
+      font-size: 12px;
+      line-height: 17px;
+      color: #979797; }
+    .collection .top .col {
+      color: #2F9842; }
+  .collection .mainarea {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; }
+    .collection .mainarea .main {
+      width: 190px;
+      margin-right: 70px;
+      border-bottom: 1px solid gray;
+      padding-bottom: 20px;
+      margin-bottom: 20px; }
+      .collection .mainarea .main .cover {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 10px; }
+        .collection .mainarea .main .cover img {
+          width: 100%;
+          height: 190px; }
+      .collection .mainarea .main .name {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        color: #000000;
+        margin-bottom: 5px; }
+      .collection .mainarea .main .opacity {
+        font-size: 12px;
+        line-height: 17px;
+        color: #000000;
+        opacity: 0.4; }
+        .collection .mainarea .main .opacity .description, .collection .mainarea .main .opacity .master, .collection .mainarea .main .opacity .songs {
+          margin-bottom: 10px; }
+        .collection .mainarea .main .opacity .count {
+          display: flex; }
+
+/*# sourceMappingURL=collection.css.map */

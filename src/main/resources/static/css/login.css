@@ -1,0 +1,104 @@
+.login {
+  width: 1024px;
+  height: 831px;
+  padding: 32px 0px 0px 32px;
+  margin: 0px auto; }
+  .login .back {
+    font-size: 12px;
+    line-height: 17px;
+    color: #767676; }
+  .login .main {
+    width: 310px;
+    height: 270px;
+    margin: 140px auto; }
+    .login .main .title {
+      text-align: center;
+      display: flex;
+      margin-bottom: 40px; }
+      .login .main .title button {
+        border-width: 0px;
+        background: #fff;
+        width: 100%;
+        height: 100%;
+        font-size: 17px;
+        cursor: pointer;
+        outline: none; }
+      .login .main .title a {
+        text-decoration: none;
+        width: 100%;
+        height: 40px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 25px;
+        color: #000000;
+        opacity: 0.4;
+        border-bottom: 1px solid #E2E2E2; }
+      .login .main .title .pswlogin {
+        width: 100%;
+        height: 40px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 25px;
+        color: #000000;
+        border-bottom: 1px solid #1C1C1C; }
+      .login .main .title .regist {
+        width: 100%;
+        height: 40px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 37px;
+        color: #000000;
+        opacity: 0.4;
+        border-bottom: 1px solid #E2E2E2; }
+    .login .main .psw {
+      position: relative; }
+      .login .main .psw a {
+        position: absolute;
+        right: 15px;
+        top: 11px;
+        font-size: 12px; }
+      .login .main .psw a:link {
+        color: #ADADAD; }
+    .login .main input {
+      width: 310px;
+      height: 40px;
+      background: #FFFFFF;
+      border: 1px solid #E2E2E2;
+      box-sizing: border-box;
+      font-size: 12px;
+      line-height: 17px;
+      color: #8D8D8D;
+      padding: 11px 15px;
+      margin-bottom: 10px; }
+    .login .main .logindouban {
+      width: 310px;
+      height: 40px;
+      background: #A8DEB0;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 22px;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+      border-width: 0px;
+      border-radius: 3px;
+      cursor: pointer;
+      outline: none;
+      font-family: Microsoft YaHei;
+      color: white; }
+      .login .main .logindouban:hover {
+        background: limegreen; }
+    .login .main .autologin {
+      font-size: 12px;
+      line-height: 17px;
+      color: #000000;
+      display: flex;
+      align-items: center; }
+      .login .main .autologin .checkbox {
+        background: #FFFFFF;
+        border: 1px solid #E2E2E2;
+        box-sizing: border-box;
+        width: 16px;
+        height: 16px;
+        margin-top: 10px; }
+
+/*# sourceMappingURL=login.css.map */

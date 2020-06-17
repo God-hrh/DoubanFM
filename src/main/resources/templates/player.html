@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>播放器</title>
+    <link rel="stylesheet" th:href="@{/css/player.css}">
+</head>
+<body>
+<div th:fragment="player" class="player-layout">
+    <div id="palyerShare">
+        <div th:replace="share::share"></div>
+    </div>
+
+    <div class="main">
+        <header>
+            <div class="left">
+            <div>
+                <img th:src="@{images/douban-icon.png}" alt="">
+            </div>
+            <div class="text">
+                下载豆瓣FM APP · 我要反馈
+            </div>
+            </div>
+            <div class="right">
+            <div class="login">
+                <a href="/login">登陆</a>
+                |
+                <a href="/sign">注册</a>
+            </div>
+            </div>
+        </header>
+
+
+        <div class="player">
+            <!--                第一行-->
+            <div class="artist">
+                <div class="first">
+                    <img th:src="@{images/Union.png}"  alt="">
+                </div>
+                <div class="artistText">
+                    李玖哲 MHz
+                </div>
+                <div class="last">
+                    <img th:src="@{images/Group.png}" alt="">
+                </div>
+            </div>
+            <!--                第二行-->
+            <div class="second">
+            <div class="qr">
+                <div class="qrimg">
+                    <img th:src="@{images/QR-code.png}" alt="">
+                </div>
+                <div class="text">
+                    下载豆瓣FM APP
+                    让好音乐继续
+                </div>
+            </div>
+            <div class="song">
+                <div class="top">
+                    <div  class="songname" th:text="${song.name}" >
+                        我不完美
+                    </div>
+                    <div th:each="singer : ${singers}">
+                    <div class="author" th:text="${singer.name}">
+                        柳工鸿
+                    </div>
+                    </div>
+                    <div class="time">
+                    <div class="left">
+                        <div class="playtime">
+                            -03:34
+                        </div>
+                        <div class="voiceIcon">
+                            <img th:src="@{images/volume.png}" alt="">
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div><img th:src="@{images/lyric.png}" alt=""></div>
+                        <div><img th:src="@{images/download.png}" alt=""></div>
+                        <div id="shareIcon" onmouseover="showSharebox()" onmouseout="hiddenSharebox()"><img th:src="@{images/share.png}" alt=""></div>
+                    </div>
+                    </div>
+<!--                    <div class="line">-->
+                    <div>
+<!--                        <img th:src="@{images/line.png}" alt="">-->
+                        <audio  controls  id="song">
+                            <source th:src="${song.url}" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+                <div class="middle">
+                    <div class="left">
+                        <div class="id" th:id="${song.id}" style="display: none"></div>
+                        <div>
+                            <a th:href="'/fav?itemType=songs&itemId='+${song.id}"><img th:src="@{images/like.png}" alt=""></a>
+                        </div>
+                        <div>
+                            <img th:src="@{images/delete.png}" alt="">
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="order-play">
+                            <img th:src="@{images/order-play.png}" alt="">
+                        </div>
+                        <div class="random-play">
+                            <img th:src="@{images/random-play.png}" alt="">
+                        </div>
+                        <div>
+                            <img th:src="@{images/prev-play.png}" alt="">
+                        </div>
+                        <div>
+                            <img th:src="@{images/polygon-play.png}" alt="">
+                        </div>
+                        <div>
+                            <img th:src="@{images/next-play.png}" alt="">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="textforlogin">
+                    <p><span>登录/注册</span> 后豆瓣FM将永久保留你的收听历史与喜好</p>
+                </div>
+            </div>
+            <div class="heardimg">
+                <img th:src="@{images/heardimg.png}" alt="">
+            </div>
+        </div>
+            <div class="toTop">
+                <img th:src="@{images/top.png}" alt="">
+            </div>
+        </div>
+
+
+    </div>
+    <div class="bottom">
+        <div class="mhz">
+            <div class="img">
+                <img th:src="@{images/mhz.png}" alt="">
+            </div>
+            <div class="text">
+                <span>兆赫</span>
+            </div>
+        </div>
+        <div class="collection">
+            <div class="img">
+                <img th:src="@{images/collection.png}" alt="">
+            </div>
+            <div class="text">
+                <span>歌单</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

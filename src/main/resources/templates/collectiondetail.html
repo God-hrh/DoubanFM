@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>歌单详情</title>
+    <meta name="referrer" content="no-referrer">
+    <link rel="stylesheet" th:href="@{/css/collectiondetail.css}">
+    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+<div class="collectiondetail">
+    <div class="back"> < 返回</div>
+    <div class="content">
+        <div class="top">
+            <div class="left"><img th:src="${subject.cover}" alt=""></div>
+            <div class="right">
+                <div class="name">[[${subject.name}]]</div>
+                <div class="colsinger"><a th:href="${singer.homepage}"></a>[[${singer.name}]]创建[[${#lists.size(songs)}]]首歌曲
+                    [[${subject.gmtModified}]]
+                </div>
+                <div class="intro">[[${subject.description}]]</div>
+                <div class="icon">
+                    <div class="shoucang">☆35</div>
+                    <div class="share"><img th:src="@{/images/share.png}" alt=""></div>
+                </div>
+            </div>
+            <div class="nav">
+                <div class="songlist">歌曲列表([[${#lists.size(songs)}]])</div>
+                <div class="other">[[${singer.name}]]的其他歌单([[${#lists.size(otherSubjects)}]])</div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="mainarea-songlist">
+                <div class="main" th:each="song,it : ${songs}">
+                    <div class="left">
+                        <div class="ordernumber">[[${it.count}]]</div>
+                        <div class="songleft"><img th:src="${song.cover}" alt=""></div>
+                        <div class="id" th:id="${song.id}" style="display: none;"></div>
+                        <div class="songright">
+                            <div class="name">[[${song.name}]]</div>
+                            <div class="singer">[[${song.albumtitle}]]•[[${song.publicYear}]]</div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="redheart"><a id="redheart" th:href="'/fav?itemType=songs&itemId='+${song.id}">❤</a></div>
+                        <div class="add">➕</div>
+                        <div class="more">…</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mainarea-others">
+                <div class="main" th:each="others:${otherSubjects}">
+                    <div class="left"><img th:src="${others.cover}" alt=""></div>
+                    <div class="right">
+                        <div class="name">[[${others.name}]]</div>
+                        <div class="count">12首歌 117收藏</div>
+                        <div class="updatetime">[[${others.gmtModified}]]更新</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+
+    // function addHeart() {
+    //     let itemId = document.querySelector(".id").getAttribute("id");
+    //     fetch("http://localhost:8080/fav?itemType=songs&itemId="+itemId).then(function (response) {
+    //         return response.json();
+    //     }).then(function (myJson) {
+    //         console.log(myJson);
+    //     });
+    // }
+</script>
+</html>

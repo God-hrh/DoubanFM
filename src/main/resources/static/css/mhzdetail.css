@@ -1,0 +1,116 @@
+.mhzdetail {
+  width: 786px;
+  height: 1299px;
+  margin: 80px auto;
+  padding: 40px; }
+  .mhzdetail hr {
+    width: 600px; }
+  .mhzdetail .share {
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 14px;
+    line-height: 20px;
+    color: #9A9A9A; }
+  .mhzdetail .singer {
+    width: 300px;
+    margin: 0px auto; }
+    .mhzdetail .singer .heardimg {
+      width: 100px;
+      margin: 0px auto; }
+      .mhzdetail .singer .heardimg img {
+        width: 100px;
+        width: 100px;
+        border-radius: 50%; }
+    .mhzdetail .singer .name {
+      text-align: center;
+      height: 42px;
+      margin: 0px auto;
+      margin-top: 15px;
+      margin-bottom: 10px; }
+      .mhzdetail .singer .name span {
+        font-size: 30px;
+        line-height: 42px;
+        color: #000000; }
+    .mhzdetail .singer .button {
+      width: 77px;
+      height: 20px;
+      margin: 0px auto;
+      margin-bottom: 40px; }
+      .mhzdetail .singer .button button {
+        background: #fff;
+        border: 1px solid #D7D7D7;
+        box-sizing: border-box;
+        font-size: 12px;
+        line-height: 17px;
+        color: #C5C5C5; }
+  .mhzdetail .songs {
+    width: 586px;
+    height: 165px;
+    padding: 40px 0px;
+    margin: 0px auto; }
+    .mhzdetail .songs .all {
+      padding-left: 23px;
+      font-size: 12px;
+      line-height: 17px;
+      color: #2F9842; }
+    .mhzdetail .songs .songlist {
+      width: 100%;
+      vertical-align: middle; }
+      .mhzdetail .songs .songlist ol li {
+        list-style: decimal; }
+      .mhzdetail .songs .songlist img {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        margin-bottom: 20px; }
+      .mhzdetail .songs .songlist span {
+        vertical-align: middle;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        font-size: 12px;
+        line-height: 17px;
+        color: #000000; }
+    .mhzdetail .songs .findall {
+      padding-left: 23px;
+      font-size: 12px;
+      line-height: 17px;
+      color: #AFAFAF; }
+  .mhzdetail .simartist {
+    width: 586px;
+    height: 325px;
+    padding: 40px 0px;
+    margin: 0px auto; }
+    .mhzdetail .simartist .name {
+      font-size: 12px;
+      line-height: 17px;
+      color: #2F9842;
+      margin-bottom: 20px; }
+    .mhzdetail .simartist .intro {
+      padding-left: 23px;
+      font-size: 12px;
+      line-height: 17px;
+      color: #AFAFAF;
+      margin-bottom: 40px; }
+    .mhzdetail .simartist .mainarea {
+      width: 571px;
+      display: flex;
+      justify-content: center; }
+      .mhzdetail .simartist .mainarea .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 140px; }
+        .mhzdetail .simartist .mainarea .main .heardimg {
+          width: 100px;
+          height: 100px; }
+          .mhzdetail .simartist .mainarea .main .heardimg img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%; }
+        .mhzdetail .simartist .mainarea .main .name {
+          margin-top: 20px;
+          margin-bottom: 40px;
+          text-align: center; }
+
+/*# sourceMappingURL=mhzdetail.css.map */

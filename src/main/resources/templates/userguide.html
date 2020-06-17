@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>我的兆赫</title>
+    <link rel="stylesheet" th:href="@{/css/userguide.css}">
+    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+<div class="mymhz" th:fragment="mymhz">
+    <div class="haveaccount">已有账号登陆 ></div>
+    <div class="title">挑选你喜欢的艺术家，开启私人音乐之旅</div>
+    <div class="mainarea">
+        <div class="main" th:each="singer:${singers}">
+            <div class="heardimg"><img th:src=${singer.avatar} alt=""></div>
+            <div class="name">[[${singer.name}]]</div>
+            <div class="button">
+                <button>喜欢</button>
+            </div>
+        </div>
+    </div>
+    <div class="opt">
+        <a href="/user-guide">换一批</a>
+        <a href="#">自己搜</a>
+    </div>
+    <div class="preimg_area">
+        <div class="preimg" th:each="i:${#numbers.sequence(1,5)}">
+            <img src="https://img3.doubanio.com/f/fm/31cb344d1af3c34978484b17d9c3241d89259080/pics/fm/artist/default_avatar/person_large.png" th:if="${i}<=5" alt="">
+        </div>
+    </div>
+    <br>
+    <div class="break">跳过，直接去听歌 ></div>
+</div>
+</body>
+</html>

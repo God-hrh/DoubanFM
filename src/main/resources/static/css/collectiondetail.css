@@ -1,0 +1,132 @@
+.collectiondetail {
+  display: flex;
+  padding: 55px 0px 0px 200px; }
+  .collectiondetail .back {
+    font-size: 12px;
+    line-height: 17px;
+    color: #767676;
+    margin-right: 25px; }
+  .collectiondetail .content {
+    width: 786px; }
+    .collectiondetail .content .top {
+      padding-bottom: 10px;
+      border-bottom: 1px solid #EAEAEA;
+      width: 100%;
+      height: 174px;
+      display: flex;
+      flex-wrap: wrap; }
+      .collectiondetail .content .top .left {
+        width: 120px;
+        height: 120px; }
+        .collectiondetail .content .top .left img {
+          width: 120px;
+          height: 120px; }
+      .collectiondetail .content .top .right {
+        margin-left: 20px;
+        width: 600px; }
+        .collectiondetail .content .top .right .name {
+          font-size: 30px;
+          line-height: 42px;
+          color: #000000; }
+        .collectiondetail .content .top .right .colsinger, .collectiondetail .content .top .right .intro {
+          font-size: 12px;
+          line-height: 17px;
+          color: #ADADAD;
+          margin-top: 10px;
+          margin-bottom: 10px; }
+        .collectiondetail .content .top .right .icon {
+          display: flex;
+          justify-content: flex-end; }
+          .collectiondetail .content .top .right .icon .shoucang {
+            font-size: 12px;
+            margin-right: 10px; }
+          .collectiondetail .content .top .right .icon .share {
+            width: 12px;
+            height: 14px; }
+            .collectiondetail .content .top .right .icon .share img {
+              width: 12px;
+              height: 14px; }
+      .collectiondetail .content .top .nav {
+        display: flex;
+        margin-top: 37px; }
+        .collectiondetail .content .top .nav .songlist {
+          font-size: 12px;
+          line-height: 17px;
+          color: #000000; }
+        .collectiondetail .content .top .nav .other {
+          margin-left: 30px;
+          font-size: 12px;
+          line-height: 17px;
+          color: #000000;
+          opacity: 0.4; }
+    .collectiondetail .content .bottom .mainarea-songlist {
+      width: 100%;
+      padding-top: 10px; }
+      .collectiondetail .content .bottom .mainarea-songlist .main {
+        width: 100%;
+        display: flex;
+        justify-content: space-between; }
+        .collectiondetail .content .bottom .mainarea-songlist .main .left {
+          display: flex;
+          align-items: center; }
+          .collectiondetail .content .bottom .mainarea-songlist .main .left .ordernumber {
+            font-size: 16px;
+            line-height: 17px;
+            color: #000000;
+            font-weight: 500;
+            opacity: 0.4;
+            margin-right: 20px; }
+          .collectiondetail .content .bottom .mainarea-songlist .main .left .songleft {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            margin-top: 20px; }
+            .collectiondetail .content .bottom .mainarea-songlist .main .left .songleft img {
+              width: 50px;
+              height: 50px; }
+          .collectiondetail .content .bottom .mainarea-songlist .main .left .songright .name {
+            font-size: 13px;
+            line-height: 17px;
+            color: #000000;
+            padding-bottom: 2px; }
+          .collectiondetail .content .bottom .mainarea-songlist .main .left .songright .singer {
+            font-size: 12px;
+            line-height: 17px;
+            color: gray; }
+        .collectiondetail .content .bottom .mainarea-songlist .main .right {
+          display: flex;
+          align-items: center; }
+          .collectiondetail .content .bottom .mainarea-songlist .main .right div {
+            margin-right: 25px; }
+    .collectiondetail .content .bottom .mainarea-others {
+      display: none;
+      width: 100%;
+      padding-top: 30px; }
+      .collectiondetail .content .bottom .mainarea-others .main {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        margin-bottom: 15px; }
+        .collectiondetail .content .bottom .mainarea-others .main .left {
+          width: 80px;
+          height: 80px; }
+          .collectiondetail .content .bottom .mainarea-others .main .left img {
+            width: 80px;
+            height: 80px; }
+        .collectiondetail .content .bottom .mainarea-others .main .right {
+          margin-left: 30px; }
+          .collectiondetail .content .bottom .mainarea-others .main .right .name {
+            margin-top: 7px;
+            font-size: 13px;
+            line-height: 17px;
+            font-weight: 500;
+            color: #000000; }
+          .collectiondetail .content .bottom .mainarea-others .main .right .count, .collectiondetail .content .bottom .mainarea-others .main .right .updatetime {
+            margin-top: 7px;
+            font-size: 12px;
+            line-height: 17px;
+            color: #000000;
+            opacity: 0.4; }
+
+/*# sourceMappingURL=collectiondetail.css.map */

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>二维码分享</title>
+    <link rel="stylesheet" th:href="@{/css/share.css}">
+    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+
+    <div class="share" th:fragment="share">
+        <div class="song">
+            <div class="left"><img th:src="@{images/douban.png}" alt=""></div>
+            <div class="right">
+                <div class="name">七里香</div>
+                <div class="author">周杰伦</div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="qrcode" id="qrcode"></div>
+            <div class="span">扫描分享到微信</div>
+            <div class="icon">
+                <img th:src="@{/images/douban.png}" alt="">
+                <img th:src="@{/images/weibo.png}" alt="">
+                <img th:src="@{/images/qq.png}" alt="">
+                <img th:src="@{/images/link.png}" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+<script th:src="@{js/qrcode-min.js}"></script>
+<script type="text/javascript">
+    var qrcode = new QRCode("qrcode", {
+        text: "www.baidu.com",
+        width: 100,
+        height: 100,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
+</script>
+</html>

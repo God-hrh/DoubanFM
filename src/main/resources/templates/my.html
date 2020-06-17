@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>我的界面</title>
+    <link rel="stylesheet" th:href="@{/css/my.css}">
+    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+<div class="my">
+    <div class="top">
+        <div class="mhz">兆赫</div>
+        <div class="col">歌单</div>
+        <div class="myy">我的</div>
+    </div>
+    <div class="middle">
+        <div class="myheart">我的红心</div>
+        <div class="heartsongs"><img th:src="@{/images/pink-play.png}" alt="">2首红心歌曲</div>
+    </div>
+    <div class="songs">
+        <div class="main" th:each="song,it : ${songs}">
+            <div class="left">
+                <div class="ordernumber">[[${it.count}]]</div>
+                <div class="songleft"><img th:src="${song.cover}" alt=""></div>
+                <div class="id" th:id="${song.id}" style="display: none;"></div>
+                <div class="songright">
+                    <div class="name">[[${song.name}]]</div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="redheart">❤</div>
+                <div class="add">➕</div>
+                <div class="more">…</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>歌单列表</title>
+    <link rel="stylesheet" th:href="@{/css/collection.css}">
+    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+<div class="collection" th:fragment="collection">
+    <div class="top">
+        <div class="mhz">兆赫</div>
+        <div class="col">歌单</div>
+        <div class="my">我的</div>
+    </div>
+    <div class="mainarea">
+        <div class="main" th:each="subject : ${subjectList}">
+            <div class="cover"><img th:src="${subject.cover}" alt=""></div>
+            <div class="name"><a th:href="'/collectiondetail?subjectId='+${subject.id}">[[${subject.name}]]</a></div>
+            <div class="opacity">
+            <div class="description">[[${subject.description}]]</div>
+            <div class="master">[[${subject.master}]]  创建</div>
+            <div class="songs" >
+                        <div >
+                        <span th:text="${subject.songnames[0]}+'-'">-</span><span th:text="${subject.songauthors[0]}"></span>
+                        </div>
+                <div >
+                    <span th:text="${subject.songnames[1]}+'-'">-</span><span th:text="${subject.songauthors[1]}"></span>
+                </div>
+                <div >
+                    <span th:text="${subject.songnames[2]}+'-'">-</span><span th:text="${subject.songauthors[2]}"></span>
+                </div>
+            </div>
+            <div class="count">
+                <div> 曲目:15 </div>
+                <div> 收藏:65 </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

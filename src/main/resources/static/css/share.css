@@ -1,0 +1,47 @@
+.share {
+  display: block;
+  width: 216px;
+  height: 268px;
+  background: #FFFFFF;
+  border: 1px solid #EAEAEA;
+  box-sizing: border-box;
+  padding: 14px 28px 25px 28px;
+  border-radius: 3%; }
+  .share .song {
+    width: 100%;
+    border-bottom: 1px solid #F1F1F1;
+    padding-bottom: 14px;
+    display: flex; }
+    .share .song .left {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px; }
+      .share .song .left img {
+        width: 40px;
+        height: 40px; }
+    .share .song .right .name {
+      font-size: 12px;
+      line-height: 23px;
+      color: #000000; }
+    .share .song .right .author {
+      font-size: 12px;
+      line-height: 17px;
+      color: #A4A4A4; }
+  .share .main .qrcode {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto; }
+  .share .main .span {
+    text-align: center;
+    font-size: 12px;
+    line-height: 17px;
+    margin-bottom: 15px;
+    color: #BABABA; }
+  .share .main .icon {
+    display: flex;
+    justify-content: space-around; }
+    .share .main .icon img {
+      width: 20px;
+      height: 20px; }
+
+/*# sourceMappingURL=share.css.map */

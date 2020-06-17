@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link th:href="@{css/player.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/bottom.css}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" th:href="@{/css/mhz.css}">
+    <link rel="stylesheet" th:href="@{/css/share.css}">
+    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div th:replace="player :: player" ></div>
+    <div th:replace="explore :: mhz"></div>
+<!--    <div th:replace="userguide :: mymhz"></div>-->
+    <div th:replace="layout :: bottom"></div>
+</body>
+<script type="text/javascript"   th:src="@{/js/qrcode-min.js}"></script>
+<script type="text/javascript">
+    //弹出的二维码，只是二维码
+    var qrcode = new QRCode("qrcode", {
+        text: "www.baidu.com",
+        width: 100,
+        height: 100,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
+    //获得整体的share
+    let palyerShare = document.getElementById("palyerShare");
+    //鼠标悬浮分享图片时的弹框
+    let showSharebox = function () {
+        palyerShare.setAttribute("style","display:block");
+    }
+    //隐藏弹框
+    let hiddenSharebox = function () {
+        palyerShare.setAttribute("style","display:none");
+    }
+</script>
+</html>

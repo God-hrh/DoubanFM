@@ -1,0 +1,80 @@
+.mhz {
+  padding-left: 100px;
+  padding-right: 100px;
+  box-sizing: border-box; }
+  .mhz .artist .title {
+    height: 20px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    color: #A6A6A6; }
+  .mhz .artist .mainarea {
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between; }
+    .mhz .artist .mainarea .main {
+      margin-right: 20px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 180px;
+      height: 230px;
+      text-align: center; }
+      .mhz .artist .mainarea .main .heardimg img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%; }
+      .mhz .artist .mainarea .main .name {
+        font-size: 14px;
+        line-height: 20px;
+        color: #000000; }
+      .mhz .artist .mainarea .main .info {
+        width: 78%;
+        font-size: 12px;
+        line-height: 17px;
+        color: #B0B0B0;
+        margin: 0px auto; }
+  .mhz .reloadMore {
+    margin: 40px auto;
+    display: flex;
+    text-align: center;
+    padding-left: 15px;
+    width: 110px;
+    height: 25px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box; }
+  .mhz .mood .title, .mhz .style .title, .mhz .age .title {
+    margin-top: 40px;
+    font-size: 12px;
+    line-height: 17px;
+    color: #A6A6A6; }
+  .mhz .mood .main, .mhz .style .main, .mhz .age .main {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around; }
+    .mhz .mood .main .name, .mhz .style .main .name, .mhz .age .main .name {
+      display: flex;
+      flex-wrap: wrap;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      color: #1C1C1C; }
+      .mhz .mood .main .name div, .mhz .style .main .name div, .mhz .age .main .name div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 40px 15px;
+        width: 180px; }
+      .mhz .mood .main .name span, .mhz .style .main .name span, .mhz .age .main .name span {
+        margin-left: 6px;
+        line-height: 20px;
+        font-size: 12px;
+        line-height: 17px;
+        color: #A5A5A5; }
+
+/*# sourceMappingURL=mhz.css.map */
