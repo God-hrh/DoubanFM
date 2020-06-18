@@ -7,10 +7,13 @@
     <link th:href="@{/css/bottom.css}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" th:href="@{/css/mhz.css}">
     <link rel="stylesheet" th:href="@{/css/share.css}">
+    <link rel="stylesheet" th:href="@{/css/nav.css}">
     <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+    <meta name="referrer" content="no-referrer" />
 </head>
 <body>
     <div th:replace="player :: player" ></div>
+    <div th:replace="nav::nav"></div>
     <div th:replace="explore :: mhz"></div>
 <!--    <div th:replace="userguide :: mymhz"></div>-->
     <div th:replace="layout :: bottom"></div>
