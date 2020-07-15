@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <title>我的界面</title>
     <link rel="stylesheet" th:href="@{/css/my.css}">
-    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
-
+    <link rel="shortcut icon" href="https://huaban.com/img/touch-icon-iphone.png" type="image/x-icon">
+    <meta name="referrer" content="no-referrer" />
+    <link rel="stylesheet" th:href="@{/css/nav.css}">
 </head>
 <body>
 <div class="my">
-    <div class="top">
-        <div class="mhz">兆赫</div>
-        <div class="col">歌单</div>
-        <div class="myy">我的</div>
-    </div>
+    <div th:replace="nav::nav"></div>
     <div class="middle">
         <div class="myheart">我的红心</div>
         <div class="heartsongs"><img th:src="@{/images/pink-play.png}" alt="">2首红心歌曲</div>
@@ -29,7 +26,8 @@
                 </div>
             </div>
             <div class="right">
-                <div class="redheart">❤</div>
+                <audio controls> <source th:src="${song.url}" type="audio/mpeg"></audio>
+                <div class="redheart" style="margin-left: 20px;">❤</div>
                 <div class="add">➕</div>
                 <div class="more">…</div>
             </div>

@@ -38,7 +38,9 @@
                     <img th:src="@{images/Union.png}"  alt="">
                 </div>
                 <div class="artistText">
-                    李玖哲 MHz
+                    <div th:each="singer : ${singers}">
+                            [[${singer.name}]] mhz
+                    </div>
                 </div>
                 <div class="last">
                     <img th:src="@{images/Group.png}" alt="">
@@ -83,6 +85,7 @@
 <!--                    <div class="line">-->
                     <div>
 <!--                        <img th:src="@{images/line.png}" alt="">-->
+<!--                        <audio id="song" th:src="${song.url}"> Your browser does not support the <code>audio</code> element. </audio>-->
                         <audio  controls  id="song">
                             <source th:src="${song.url}" type="audio/mpeg">
                         </audio>
@@ -122,7 +125,7 @@
                 </div>
             </div>
             <div class="heardimg">
-                <img th:src="@{images/heardimg.png}" alt="">
+                <img th:src="${song.cover}" alt="">
             </div>
         </div>
             <div class="toTop">
@@ -132,25 +135,7 @@
 
 
     </div>
-    <div class="bottom">
-        <div class="mhz">
-            <div class="img">
-                <img th:src="@{images/mhz.png}" alt="">
-            </div>
-            <div class="text">
-                <span>兆赫</span>
-            </div>
-        </div>
-        <div class="collection">
-            <div class="img">
-                <img th:src="@{images/collection.png}" alt="">
-            </div>
-            <div class="text">
-                <span>歌单</span>
-            </div>
 
-        </div>
-    </div>
 </div>
 
 </body>

@@ -1,6 +1,17 @@
 .collectiondetail {
   display: flex;
   padding: 55px 0px 0px 200px; }
+  .collectiondetail #collectiondetailShare {
+    display: none;
+    position: absolute;
+    top: 27px;
+    right: 24px; }
+  .collectiondetail a {
+    text-decoration: none; }
+    .collectiondetail a:link {
+      color: #767676; }
+    .collectiondetail a:visited {
+      color: #767676; }
   .collectiondetail .back {
     font-size: 12px;
     line-height: 17px;
@@ -40,10 +51,10 @@
           .collectiondetail .content .top .right .icon .shoucang {
             font-size: 12px;
             margin-right: 10px; }
-          .collectiondetail .content .top .right .icon .share {
+          .collectiondetail .content .top .right .icon .collectiondetail-share {
             width: 12px;
             height: 14px; }
-            .collectiondetail .content .top .right .icon .share img {
+            .collectiondetail .content .top .right .icon .collectiondetail-share img {
               width: 12px;
               height: 14px; }
       .collectiondetail .content .top .nav {

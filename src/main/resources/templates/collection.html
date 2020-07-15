@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <title>歌单列表</title>
     <link rel="stylesheet" th:href="@{/css/collection.css}">
-    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
-
+    <link rel="shortcut icon" href="https://huaban.com/img/touch-icon-iphone.png" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/css/nav.css}">
+    <link th:href="@{/css/bottom.css}" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="collection" th:fragment="collection">
-    <div class="top">
-        <div class="mhz">兆赫</div>
-        <div class="col">歌单</div>
-        <div class="my">我的</div>
-    </div>
+    <div th:replace="nav::nav"></div>
     <div class="mainarea">
         <div class="main" th:each="subject : ${subjectList}">
             <div class="cover"><img th:src="${subject.cover}" alt=""></div>
@@ -40,5 +37,6 @@
         </div>
     </div>
 </div>
+<div th:replace="layout :: bottom"></div>
 </body>
 </html>

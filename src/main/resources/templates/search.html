@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <title>搜索</title>
     <link rel="stylesheet" th:href="@{/css/search.css}">
-    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
-
+    <link rel="stylesheet" th:href="@{/css/nav.css}">
+    <link rel="shortcut icon" href="https://huaban.com/img/touch-icon-iphone.png" type="image/x-icon">
+<!--    解决加载网络图片，图片403问题-->
+    <meta name="referrer" content="no-referrer" />
 </head>
 <body>
+
     <div class="search">
+        <div th:replace="nav::nav"></div>
         <div class="main">
             <input type="text" placeholder="搜索你喜欢的歌曲" id="keyword" onchange="result()" value="">
             <span>取消</span>
@@ -20,24 +24,33 @@
                         <img th:src="${song.cover}" alt="">
                     </div>
                     <div class="name">[[${song.name}]]</div>
+                    <audio  controls  >
+                        <source th:src="${song.url}" type="audio/mpeg">
+                    </audio>
                 </div>
             </div>
         </div>
     </div>
 </body>
 <script>
-    let img = document.querySelector("img");
+    let img = document.querySelector(".heardimg");
     let name = document.querySelector(".name");
+    let audio = document.querySelector("audio");
     let result = function() {
         let keyword = document.getElementById("keyword").value;
         console.log(keyword);
-        fetch("http://localhost:8080/"+""+"searchContent?keyword="+keyword)
+        fetch("/searchContent?keyword="+keyword)
             .then(function (response) {
                 return response.json();
             }).then(function (myJson) {
             console.log(myJson);
-            name.innerHTML = `${myJson.name}`;
-            img.src = `${myJson.cover}`;
+            for (let i in myJson.songs) {
+                console.log(myJson.songs[i]);
+                name.innerHTML = `<span>${myJson.songs[i].name} </span>`;
+                img.innerHTML = `<img src="${myJson.songs[i].cover}" alt="">`;
+                audio.innerHTML=`<source src="${myJson.songs[i].url}" type="audio/mpeg">`;
+                audio.load();
+            }
         });
     }
 </script>

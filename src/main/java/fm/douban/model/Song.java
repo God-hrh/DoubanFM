@@ -109,4 +109,20 @@ public class Song {
     public void setAlbumtitle(String albumtitle) {
         this.albumtitle = albumtitle;
     }
+
+    @Override
+    public String toString() {
+        return "Song{" +
+                "id='" + id + '\'' +
+                ", gmtCreated=" + gmtCreated +
+                ", gmtModified=" + gmtModified +
+                ", name='" + name + '\'' +
+                ", lyrics='" + lyrics + '\'' +
+                ", cover='" + cover + '\'' +
+                ", url='" + url + '\'' +
+                ", singerIds=" + singerIds +
+                ", publicYear='" + publicYear + '\'' +
+                ", albumtitle='" + albumtitle + '\'' +
+                '}';
+    }
 }

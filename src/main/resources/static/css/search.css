@@ -1,7 +1,8 @@
 .search {
-  width: 955px;
-  padding: 100px;
-  margin: 50px 100px; }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
   .search .main input {
     width: 788px;
     height: 50px;
@@ -14,16 +15,18 @@
     font-size: 16px;
     line-height: 22px;
     color: #777777;
-    margin-left: 20px; }
+     }
   .search .searchresult {
     width: 760px;
     margin-top: 35px;
     display: flex;
     justify-content: space-between; }
     .search .searchresult .mainarea {
-      width: inherit; }
+      width: inherit;
+       }
       .search .searchresult .mainarea .main {
         width: 100px;
+        text-align: center;
         height: 130px; }
         .search .searchresult .mainarea .main .heardimg {
           width: 100px;
@@ -34,7 +37,7 @@
             border-radius: 50%; }
         .search .searchresult .mainarea .main .name {
           margin-top: 10px;
-          text-align: center;
+
           font-size: 12px;
           line-height: 17px;
           color: #000000; }

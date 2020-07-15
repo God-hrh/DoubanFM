@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>explore</title>
     <link rel="stylesheet" th:href="@{/css/mhz.css}">
-    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://huaban.com/img/touch-icon-iphone.png" type="image/x-icon">
 
 </head>
 <body>
@@ -13,16 +13,14 @@
     <div class="artist">
         <div class="title">从艺术家出发</div>
         <div class="mainarea">
-        <div class="main" th:each="art,it : ${artistDatas}"th:if="${it.count}<=10">
-            <div class="heardimg"><img th:src="${art.cover}" alt=""></div>
-            <div class="name" ><a th:href="'/artist?subjectId='+${art.id}">[[${art.name}]]</a></div>
-            <div class="info">[[${art.description}]]</div>
-
-        </div>
+            <div class="main" th:each="art,it : ${artistDatas}">
+                    <div class="heardimg"><img th:src="${art.cover}" alt=""></div>
+                    <div class="name" ><a target="_blank" th:href="'/artist?subjectId='+${art.id}">[[${art.name}]]</a></div>
+                    <div class="info">[[${art.description}]]</div>
+            </div>
         </div>
         <hr>
     </div>
-
     <button class="reloadMore">加载更多兆赫</button>
     <div class="mood">
         <div class="title">心情 / 场景</div>

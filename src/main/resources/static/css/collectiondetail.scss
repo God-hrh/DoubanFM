@@ -1,4 +1,19 @@
 .collectiondetail{
+  #collectiondetailShare{
+    display: none;
+    position: absolute;
+    top: 27px;
+    right: 24px;
+  }
+  a{
+    text-decoration: none;
+    &:link{
+      color: #767676;
+    }
+    &:visited{
+      color: #767676;
+    }
+  }
   display: flex;
   padding: 55px 0px 0px 200px;
   .back{
@@ -28,6 +43,7 @@
       .right{
         margin-left: 20px;
         width: 600px;
+
         .name{
           font-size: 30px;
           line-height: 42px;
@@ -47,7 +63,7 @@
             font-size: 12px;
             margin-right: 10px;
           }
-          .share{
+          .collectiondetail-share{
             width: 12px;
             height: 14px;
             img{

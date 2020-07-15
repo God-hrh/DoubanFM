@@ -36,9 +36,10 @@
       color: #9C9C9C;
       margin-bottom: 25px; }
       .my .middle .heartsongs img {
-        width: 42px;
-        height: 42px;
-        margin-right: 20px; }
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        vertical-align: middle; }
   .my .songs {
     width: 100%;
     padding-top: 10px; }

@@ -8,7 +8,7 @@
     <link rel="stylesheet" th:href="@{/css/mhz.css}">
     <link rel="stylesheet" th:href="@{/css/share.css}">
     <link rel="stylesheet" th:href="@{/css/nav.css}">
-    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://huaban.com/img/touch-icon-iphone.png" type="image/x-icon">
     <meta name="referrer" content="no-referrer" />
 </head>
 <body>
@@ -39,5 +39,22 @@
     let hiddenSharebox = function () {
         palyerShare.setAttribute("style","display:none");
     }
+
+    //加载更多
+    //页面渲染就加载的方法
+    window.onload=function(){
+        const x = document.querySelectorAll('.mhz .artist .mainarea .main ');
+        for (i = 10; i < x.length; i++) {
+            x[i].setAttribute("style","display: none");
+        }
+    }
+    let lodemore = document.querySelector(".reloadMore");
+    lodemore.addEventListener("click",function () {
+        const x = document.querySelectorAll('.mhz .artist .mainarea .main ');
+        for (i = 10; i < x.length; i++) {
+            x[i].setAttribute("style","display: block");
+        }
+        lodemore.setAttribute("style","display: none");
+    })
 </script>
 </html>

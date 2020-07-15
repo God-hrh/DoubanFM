@@ -61,8 +61,8 @@ public class UserControl {
     }
     //登陆操作
     @PostMapping("/authenticate")
-    @ResponseBody
-    public Map login(@RequestParam String name,@RequestParam String password,
+//    @ResponseBody
+    public String login(@RequestParam String name,@RequestParam String password,
                      HttpServletRequest request,HttpServletResponse response){
         Map map = new HashMap();
         User user = userService.get(name);
@@ -77,6 +77,6 @@ public class UserControl {
                 map.put("message","密码输入错误");
             }
         }
-        return map;
+        return "redirect:index";
     }
 }

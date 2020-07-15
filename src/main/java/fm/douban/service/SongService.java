@@ -4,6 +4,8 @@ import fm.douban.model.Song;
 import fm.douban.param.SongQueryParam;
 import org.springframework.data.domain.Page;
 
+import java.util.List;
+
 /**
  * @author Heerh
  * @version 1.0

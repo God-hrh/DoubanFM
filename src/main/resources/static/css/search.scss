@@ -1,7 +1,8 @@
 .search{
-  width: 955px;
-  padding: 100px;
-  margin: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   .main{
     input{
       width: 788px;
@@ -26,6 +27,7 @@
     justify-content: space-between;
     .mainarea{
       width: inherit;
+      padding-left: 55px;
       .main{
         width: 100px;
         height: 130px;

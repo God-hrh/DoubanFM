@@ -19,10 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static fm.douban.util.SubjectUtil.*;
 
@@ -46,23 +43,34 @@ public class MainControl {
     @RequestMapping("/index")
     public String index(Model model){
         SongQueryParam songQueryParam = new SongQueryParam();
+//        songQueryParam.setPageNum(1000);
         songQueryParam.setPageNum(1);
         songQueryParam.setPageSize(1);
-        songQueryParam.setId("16");
-        Song song =  songService.list(songQueryParam).getContent().get(0);
-        model.addAttribute("song",song);
-        List<Singer> singerList = new ArrayList<>();
-        Singer singer = null;
-        if ( song.getSingerIds()!=null) {
-            for (String singersId : song.getSingerIds()) {
-                singer = singerService.get(singersId);
-                if (singer!=null){
-                    singerList.add(singer);
-                }
+        songQueryParam.setId("999926");
+        Page<Song> songs =  songService.list(songQueryParam);
+
+        if (songs != null && !songs.isEmpty()) {
+            //从数据随机获取一首歌曲显示在index里
+//            int a = (int) (Math.random()*1000);
+//            Song resultSong = songs.getContent().get(a);
+            Song resultSong = songs.getContent().get(0);
+            model.addAttribute("song", resultSong);
+            List<String> singerIds = resultSong.getSingerIds();
+//            LOG.info("singerIds-----------"+singerIds.toString());
+            List<Singer> singers = new ArrayList<>();
+            if (singerIds != null && !singerIds.isEmpty()) {
+                singerIds.forEach(singerId -> {
+                    Singer singer = singerService.get(singerId);
+                    if (singer!=null){
+                        singers.add(singer);
+                    }
+                });
             }
+            model.addAttribute("singers", singers);
         }
-        model.addAttribute("singers",singerList);
         List artistList = subjectService.getSubjects(TYPE_MHZ,TYPE_SUB_ARTIST);
+        //每次给集合打乱顺序
+        Collections.shuffle(artistList);
         List moodList = subjectService.getSubjects(TYPE_MHZ,TYPE_SUB_MOOD);
         List ageList = subjectService.getSubjects(TYPE_MHZ,TYPE_SUB_AGE);
         List styleList = subjectService.getSubjects(TYPE_MHZ,TYPE_SUB_STYLE);
@@ -85,9 +93,11 @@ public class MainControl {
     }
     //搜索页
     @GetMapping("/search")
-    public String search(Model model){
-        Map resultMap = searchContent("Stargazers");
-        model.addAttribute("songs",resultMap.get("songs"));
+    public String search(Model model,@RequestParam(name = "keyword",required = false,defaultValue = "DO ME") String keyword){
+        SongQueryParam songQueryParam = new SongQueryParam();
+        songQueryParam.setName(keyword);
+        List<Song> songList = songService.list(songQueryParam).getContent();
+        model.addAttribute("songs",songList);
         return "search";
     }
     //搜索结果
@@ -122,6 +132,8 @@ public class MainControl {
                     songs.add(song);
                 }
             }
+            LOG.info("-------favoriteList-------"+favoriteList);
+            LOG.info("-------songs-------"+songs);
             model.addAttribute("favorites", favoriteList);
             model.addAttribute("songs", songs);
             return "my";
@@ -130,8 +142,8 @@ public class MainControl {
         }
     }
     @GetMapping(path = "/fav")
-    @ResponseBody
-    public Map doFav(@RequestParam String itemType,@RequestParam String itemId, HttpServletRequest request, HttpServletResponse response){
+//    @ResponseBody
+    public String doFav(@RequestParam String itemType,@RequestParam String itemId, HttpServletRequest request, HttpServletResponse response){
         Map map = new HashMap();
         //开启session
         HttpSession session = request.getSession();
@@ -154,10 +166,7 @@ public class MainControl {
         }else {
             map.put("error","没有登陆");
         }
-        return map;
+        return "redirect:my";
     }
-    @GetMapping(path = "/share")
-    public String share(){
-        return "share";
-    }
+
 }

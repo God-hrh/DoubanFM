@@ -68,26 +68,22 @@ public class SongServiceImpl implements SongService {
         if (StringUtils.hasText(songQueryParam.getUrl())){
             criteriaList.add(Criteria.where("url").is(songQueryParam.getUrl()));
         }
-        if (songQueryParam.getGmtCreated()!=null){
-            criteriaList.add(Criteria.where("gmtCreated").is(songQueryParam.getGmtCreated()));
-        }
-        if (songQueryParam.getGmtModified()!=null){
-            criteriaList.add(Criteria.where("gmtModified").is(songQueryParam.getGmtCreated()));
+        if (StringUtils.hasText(songQueryParam.getId())){
+            criteriaList.add(Criteria.where("id").is(songQueryParam.getId()));
         }
         Query query = null;
-        if (criteriaList.isEmpty()){
+        if (!criteriaList.isEmpty()){
             //Criteria.where("id").is(songQueryParam.getId())
-             query = new Query(Criteria.where("id").is(songQueryParam.getId()));
-        }else {
+            //query = new Query(Criteria.where("id").is(songQueryParam.getId()));
             criteria.andOperator(criteriaList.toArray(new Criteria[]{}) );
-             query = new Query(criteria);
-
         }
+        query = new Query(criteria);
+
         //查询结果
         List<Song> SongQueryParams = mongoTemplate.find(query,Song.class);
         //获取记录总数
         Long count = mongoTemplate.count(query,Song.class);
-        //创建分页对象
+        // 构建分页对象。注意此对象页码号是从 0 开始计数的。
         Pageable pageable = PageRequest.of(songQueryParam.getPageNum()-1,songQueryParam.getPageSize());
         query.with(pageable);
         //构建分页器

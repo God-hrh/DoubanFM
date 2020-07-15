@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>导航</title>
+</head>
+<body>
+<div class="nav" th:fragment="nav">
+        <div class="player-mhz">
+            <div class="img">
+                <img th:src="@{images/radioFM.png}" alt="">
+            </div>
+            <div class="text">
+                <span><a href="/index">兆赫</a></span>
+            </div>
+        </div>
+        <div class="player-collection">
+            <div class="img">
+                <img th:src="@{images/collection.png}" alt="">
+            </div>
+            <div class="text">
+                <span><a href="/collection" target="_blank">歌单</a></span>
+            </div>
+        </div>
+        <div class="player-my">
+            <div class="img">
+                <img th:src="@{images/heart.png}" alt="">
+            </div>
+            <div class="text">
+                <span><a href="/my" >我的</a></span>
+            </div>
+        </div>
+        <div class="player-search">
+            <div class="img">
+                <img src="/images/sousuo-icon.png" alt="">
+            </div>
+            <div class="text">
+                <span><a href="/search" target="_blank">搜索</a></span>
+            </div>
+        </div>
+</div>
+</body>
+</html>

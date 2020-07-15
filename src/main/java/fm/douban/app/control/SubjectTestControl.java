@@ -3,6 +3,7 @@ package fm.douban.app.control;
 import fm.douban.model.Subject;
 import fm.douban.service.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -55,5 +56,10 @@ public class SubjectTestControl {
         Subject subject = new Subject();
         subject.setId("0");
         return subjectService.delete(subject.getId());
+    }
+    //测试分享页面使用
+    @GetMapping(path = "/share")
+    public String share(){
+        return "share";
     }
 }

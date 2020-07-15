@@ -3,25 +3,40 @@
     width: 600px;
   }
   width: 786px;
-  height: 1299px;
   margin: 80px auto;
   padding: 40px;
-  .share{
+  border: 1px solid #E4E4E4;
+  box-sizing: border-box;
+  position: relative;
+  .share-icon{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
     font-size: 14px;
     line-height: 20px;
     color: #9A9A9A;
+    img{
+      height: 14px;
+      width: 14px;
+      margin-right: 10px;
+    }
+  }
+  .mhzdetail-qrcode{
+    display: none;
+    position: absolute;
+    top: 66px;
+    right: -46px;
   }
   .singer{
     width: 300px;
     margin: 0px auto;
     .heardimg{
-      width: 100px;
+      width: 150px;
       margin: 0px auto;
       img{
-        width: 100px;
-        width: 100px;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
       }
     }
@@ -54,38 +69,45 @@
   }
   .songs{
     width: 586px;
-    height: 165px;
     padding: 40px 0px;
     margin: 0px auto;
       .all{
+        img{
+          width: 11px;
+          height: 11px;
+          margin-right: 10px;
+        }
         padding-left: 23px;
         font-size: 12px;
         line-height: 17px;
         color: #2F9842;
       }
     .songlist{
-      ol{
-        li{
-          list-style:decimal;
-        }
-      }
       width: 100%;
       vertical-align: middle;
-
-        img{
-          width: 20px;
-          height: 20px;
-          vertical-align: middle;
-          margin-bottom: 20px;
+      ul{
+        .song{
+          display: flex;
+          span{
+            font-size: 13px;
+          }
+          img{
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin: 0px 5px 20px;
+          }
+          li{
+            list-style:none;
+            span{
+              vertical-align: middle;
+              margin-bottom: 10px;
+              font-size: 12px;
+              line-height: 17px;
+              color: #000000;
+            }
+          }
         }
-
-      span{
-        vertical-align: middle;
-        margin-left: 10px;
-        margin-bottom: 10px;
-        font-size: 12px;
-        line-height: 17px;
-        color: #000000;
       }
     }
     .findall{
@@ -105,6 +127,11 @@
       line-height: 17px;
       color: #2F9842;
       margin-bottom: 20px;
+      img{
+        width: 11px;
+        height: 11px;
+        margin-right: 10px;
+      }
     }
     .intro{
       padding-left: 23px;
