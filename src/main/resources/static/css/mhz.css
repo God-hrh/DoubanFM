@@ -1,4 +1,6 @@
 .mhz {
+  width: 1250px;
+  margin: 0px auto;
   padding-left: 100px;
   padding-right: 100px;
   box-sizing: border-box; }

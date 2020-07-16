@@ -1,5 +1,5 @@
 .collection {
-  padding: 0px 70px 0px 130px; }
+  width: 100%; }
   .collection a {
     text-decoration: none; }
   .collection a:link {
@@ -23,9 +23,11 @@
     .collection .top .col {
       color: #2F9842; }
   .collection .mainarea {
-    width: 100%;
+    width: 949px;
+    justify-content: space-between;
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    margin: 0px auto; }
     .collection .mainarea .main {
       width: 190px;
       margin-right: 70px;
